@@ -5,3 +5,4 @@ plotly==5.14.0
 scipy
 seaborn
 statsmodels==0.13.5
+pynometrics

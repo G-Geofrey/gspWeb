@@ -8,7 +8,7 @@ gspWeb/example/
 *.egg-info
 *.DS_Store
 **/Setupfiles/
-**/venv
+*venv*
 **/credentials/
 **/steps
 
