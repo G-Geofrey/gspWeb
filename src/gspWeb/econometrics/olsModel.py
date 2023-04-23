@@ -240,14 +240,14 @@ class ols_model:
     def get_ols(self):
         formula = "lwage ~ exper + educ + age + kidslt6 + kidsge6 + unem + city"
         self.olsModel = smf.ols(formula, data=self.df).fit()
-        self.olsModel_reset_pvalue, self.olsModel_shapiro_pvalue, self.olsModel_breushPagan_pvalue = ols_diagnostic_test(self.olsModel)
+        # self.olsModel_reset_pvalue, self.olsModel_shapiro_pvalue, self.olsModel_breushPagan_pvalue = ols_diagnostic_test(self.olsModel)
 
         return self.olsModel
 
     def get_olsExt(self):
         formula = "lwage ~ exper + I(exper**2) + educ + age + kidslt6 + kidsge6 + unem + city "
         self.olsModelExt = smf.ols(formula, data=self.df).fit() 
-        self.olsModelExt_reset_pvalue, self.olsModelExt_shapiro_pvalue, self.olsModelExt_breushPagan_pvalue = ols_diagnostic_test(self.olsModelExt)
+        # self.olsModelExt_reset_pvalue, self.olsModelExt_shapiro_pvalue, self.olsModelExt_breushPagan_pvalue = ols_diagnostic_test(self.olsModelExt)
         return self.olsModelExt
     
     def plot_exp(self):
