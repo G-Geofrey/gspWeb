@@ -15,11 +15,11 @@ with open("requirements.txt") as f:
 setup(
     name='gspWeb',
 
-    version='0.1.0',
+    version='0.2.0',
 
-    description='Fitting ols model in python',
+    # description='Fitting ols model in python',
 
-    packages=['gspWeb', 'gspWeb.econometrics'],
+    packages=find_packages(),#['gspWeb', 'gspWeb.econometrics'],
 
     # directory in which code file is stored
     package_dir={'':'src'},
