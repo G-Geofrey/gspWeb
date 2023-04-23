@@ -56,6 +56,7 @@ def plot_model_summary(mdl):
     )
     plt.axis('off')
     plt.tight_layout()
+    plt.close()
     return fig
 
 def ols_diagnostic_test(mdl):
