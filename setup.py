@@ -19,7 +19,7 @@ setup(
 
     # description='Fitting ols model in python',
 
-    packages=find_packages(),#['gspWeb', 'gspWeb.econometrics'],
+    packages=['gspWeb', 'gspWeb.econometrics'],
 
     # directory in which code file is stored
     package_dir={'':'src'},
