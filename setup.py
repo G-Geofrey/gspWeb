@@ -1,5 +1,6 @@
 
 from setuptools import setup, find_packages
+from pkg_resources import parse_requirements
 import os
 
 
@@ -7,6 +8,9 @@ path = os.path.join(os.environ.get('HOME'), 'Desktop/wg/projects/package_dev/gsp
 
 with open(path, "r") as fh:
     long_description = fh.read()
+
+with open("requirements.txt") as f:
+    requirements = [str(requirement) for requirement in parse_requirements(f)]
 
 setup(
     name='gspWeb',
@@ -40,13 +44,15 @@ setup(
         "Operating System :: OS Independent"
         ],
 
-     install_requires=[
-        "matplotlib",
-        "numpy",
-        "pandas",
-        "plotly==5.14.0",
-        "scipy",
-        "seaborn",
-        "statsmodels==0.13.5",
-    ]
+     install_requires=requirements
+     
+    #  [
+    #     "matplotlib",
+    #     "numpy",
+    #     "pandas",
+    #     "plotly==5.14.0",
+    #     "scipy",
+    #     "seaborn",
+    #     "statsmodels==0.13.5",
+    # ]
 )
