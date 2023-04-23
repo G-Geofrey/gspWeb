@@ -14,6 +14,8 @@ from plotly.subplots import make_subplots
 
 import statsmodels.formula.api as smf
 
+from kaggle.api.kaggle_api_extended import KaggleApi
+
 warnings.filterwarnings("ignore")
 sns.set_style("whitegrid")
 params = {
@@ -38,15 +40,14 @@ params = {
 plt.rcParams.update(params)
 
 class clv_cohort:
-    
-#     def __init__(self):
-#         pass
+
 
     def get_data(self, data_df=None):
 
-        url = "../dataBase/Transactions.csv"
-
-        df_raw = pd.read_csv(url)
+        api = KaggleApi()
+        api.authenticate()
+        api.dataset_download_file(dataset='gspwanyama/transactions', file_name='Transactions.csv')
+        df_raw = pd.read_csv('Transactions.csv')
 
         self.df = (
             df_raw
